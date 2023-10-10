@@ -16,3 +16,4 @@
 # all(bool array) - returns true if all the elements are true
 # c(vector1, vector2) - concatenates the two vectors
 # c(1,2,3) %in% c(1,2,3) - returns true/false for each element if the elements of the first vector are in the second vector
+# which(vector == value) - returns the indexes where elements are equal to value
