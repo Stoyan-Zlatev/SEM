@@ -173,10 +173,37 @@ prob.dice.ball(100000)
 
 
 #Task 12
+sim.coins <- function() {
+  T11 <- c(1, 1)
+  T22 <- c(2, 2)
+  T12 <- c(1, 2)
+  draw <- sample(c(1:5), 1)
+  if (draw<=2) {
+    coin <- T11
+  } else if (draw == 3) {
+    coin <- T22
+  } else {
+    coin <- T12
+  }
+  
+  flip_coin_result = sample(coin, 1)
+  #draw>=4 means the flipped coin was T12
+  c(flip_coin_result, draw>=4)
+}
+
+prob.coins <- function(n) {
+  res <- replicate(n, sim.coins())
+  A <- sum(res[1,]==1)/length(res)
+  B <- sum(res[2,]==1 & res[1,]==1)/length(res[1,]==1)
+  c(A, B)
+}
+
+prob.coins(100000)
 sim.money <- function(){
     sample(c(11,11,22,12,21),1)
 }
 
+#TODO Task 12 v.2 
 prob.money <- function(n){
     res <- replicate(n, sim.money())
     a <- sum(res == 11 | res == 21) / length(res)
