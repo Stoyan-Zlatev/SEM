@@ -194,7 +194,7 @@ sim.coins <- function() {
 prob.coins <- function(n) {
   res <- replicate(n, sim.coins())
   A <- sum(res[1,]==1)/length(res)
-  B <- sum(res[2,]==1 & res[1,]==1)/length(res[1,]==1)
+  B <- sum(res[2,]==1 & res[1,]==1)/sum(res[1,]==1)
   c(A, B)
 }
 
