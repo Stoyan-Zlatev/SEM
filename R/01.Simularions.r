@@ -241,13 +241,16 @@ prob.cards(100000)
 #Task 17
 
 sim.floor <- function() {
-  floors <- sample(2:16, 7, replace = T)
-  any(duplicated(floors))
+  floors <- c(2:16)
+  me <- sample(floors, 1)
+  others <- sample(floors, 6, replace=TRUE)
+  c(sum(duplicated(c(me, others))==TRUE) >= 1, length(which(others == me))>=2)
 }
 
 prob.floor <- function(n) {
   res <- replicate(n, sim.floor())
-  sum(res) / length(res)
+  c(sum(res[1,]) / length(res[1,]),
+  sum(res[2,]) / length(res[2,]))
 }
 
 prob.floor(100000)
