@@ -60,3 +60,16 @@ pgeom(10-1, 0.03)
 
 # Task 27
 1 - phyper(1, 90, 2910, 50)
+
+# Task 28
+1 - pgeom(4-1, 1/10)
+1 - dnbinom(50-10, 10, 1/10)
+
+# Task 29
+1 - pbinom(2, 360, 1/90)
+
+# Task 30
+1 - phyper(2, 13, 39, 10)
+
+# Task 31
+1 - pbinom(1, 10, 13/52)
