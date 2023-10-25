@@ -24,7 +24,7 @@
 
 
 
-## Distribution Functions
+## Probability Functions
 
 # X = # of successes in n trials
 # p = probability of success in 1 trial
@@ -45,3 +45,46 @@
 # X ~ NB(r,p)
 # P(X = k) = dnbinom(k-r,r,p)
 # P(X <= k) = pnbinom(k-r,r,p)
+
+
+## Distribution functions
+
+
+# X - непрекъсната случайна величина
+# P(a <= X <= b) = \Integral_a^b f(x) dx = F(b) - F(a)
+# f(x) - плътност на X
+# P(X <= t) = \Integral_{-\Inf}^t f(x) dx = F(t) - функция на разпределение
+# P(X = a) = 0
+# P(X < a) = P(X <= a)
+# E(X) = \mu = \Integral_{-\Inf}^{Inf} xf(x) dx - средна стойност
+# Var(X) = \sigma^2 = E(X-\mu)^2 - дисперсия
+# \sigma - стандратно отклонение (колко далеч може да отиват стойностите спрямо средната стойност) 
+
+
+# X ~ U(a,b) - равномерно разпределение
+# f(X) = 1 / (b-a) за x \in [a,b]
+# dunif(x,a,b) = f(x)
+# punif(q,a,b) = P(X<=q)=F(q)
+# qunif(p,a,b) = F^{-1}(p)
+# runif(N,a,b) - генерира N равномерно разпределени величини
+
+
+# X ~ Exp(\lambda) - експоненциалнво разпределение
+# f(X) = \lambda e^{\lambda} за x>=0
+# dexp(x,lambda) = f(x)
+# pexp(q,lambda) = P(X<=q)=F(q)
+# qexp(p,lambda) = F^{-1}(p)
+# rexp(N,lambda) - генерира N равномерно разпределени величини
+
+
+# X ~ N(\mu, \sigma^2) - експоненциалнво разпределение
+# f(X) = ....
+# dnorm(x,mu,sigma) = f(x)
+# pnorm(q,mu,sigma) = P(X<=q)=F(q)
+# qnorm(p,mu,sigma) = F^{-1}(p)
+# rnorm(N,mu,sigma) - генерира N равномерно разпределени величини
+
+
+
+# hist(vecor) - хистограма
+# curve(function,from=START, to=END, add=T(TO PREV GRAPH), lwd=3(THICKNESS))
