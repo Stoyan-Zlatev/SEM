@@ -75,7 +75,7 @@
 # qexp(p,lambda) = F^{-1}(p)
 # rexp(N,lambda) - генерира N равномерно разпределени величини
 
-# X ~ N(\mu, \sigma^2) - експоненциалнво разпределение
+# X ~ N(\mu, \sigma^2) - нормално разпределение
 # f(X) = ....
 # dnorm(x,mu,sigma) = f(x)
 # pnorm(q,mu,sigma) = P(X<=q)=F(q)
