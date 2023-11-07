@@ -113,3 +113,17 @@
 
 # getwd() - current working directory
 # load("<file>") - load file from the working directory
+
+
+
+
+## Central Limit Theorem (CLT)
+
+# X_1, ..., X_n - независими и еднакво разпределени случайни величини
+# E(X_i) = \mu 
+# Var(X_i) = \sigma^2 < \inf
+# Xbar = 1/n * (X_1 + ... + X_n)
+# За големи n (Xbar-\mu)/(\sigma / \sqrt(n)) приближава N(0,1)
+# P ( ((Xbar-\mu)/(\sigma / \sqrt(n))) <= a ) = pnorm(a,0,1) = pnorm(a)
+
+# sapply(<vector>, <one arg func>) - execute func for each value of vector
