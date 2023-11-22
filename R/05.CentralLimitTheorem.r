@@ -104,3 +104,75 @@ sum(mean.vals > 5.5) / length(mean.vals)
 
 a <- (4000 - 160*24)/(7*sqrt(160))
 1-pnorm(a)
+
+
+
+# Task 62
+
+#a
+
+# simulations
+n.heads <- replicate(10^5,sum(sample(c(0,1),200, replace=T)))
+sum(n.heads != 100) / length(n.heads)
+
+# distribution functions
+# X ~ Bi(n=200, p=0.5)
+# P(X != 100) = 1 - P(X=100)
+1-dbinom(100,200,0.5)
+
+#b
+
+#simulations
+a <- 14
+x1 <- 100 - a
+x2 <- 100 + a
+1 - (sum(n.heads >= x1 & n.heads <= x2)/length(n.heads))
+sum(n.heads < x1 | n.heads > x2) / length(n.heads)
+
+# distribution functions
+# X ~ Bi(n=200, p=0.5)
+# P(X < 86 || X > 114) = 1 - P(86 <= X <= 114)
+1-sum(dbinom(86:114,200,0.5))
+
+#c
+
+#simulations
+n.heads <- replicate(10^5,sum(sample(c(0,1),200, replace=T, prob=c(0.4,0.6))))
+sum(n.heads < x1 | n.heads > x2) / length(n.heads)
+
+# distribution functions
+# X ~ Bi(n=200, p=0.6)
+# P(X < 86 || X > 114) = 1 - P(86 <= X <= 114)
+1-sum(dbinom(86:114,200,0.6))
+
+#d
+
+#simulations
+n.heads <- replicate(10^5,sum(sample(c(0,1),200, replace=T, prob=c(0.3,0.7))))
+sum(n.heads < x1 | n.heads > x2) / length(n.heads)
+
+# distribution functions
+# X ~ Bi(n=200, p=0.6)
+# P(X < 86 || X > 114) = 1 - P(86 <= X <= 114)
+1-sum(dbinom(86:114,200,0.7))
+
+
+
+
+# Task 63
+
+mu <- 6.7
+sigma <- 0.12
+n <- 45
+
+#a
+mean.diam <- replicate(10^5, mean(rnorm(n, mu, sigma)))
+sum(mean.diam <= 6.7-0.036 | mean.diam >= 6.7+0.036)/length(mean.diam)
+
+#b
+mean.diam <- replicate(10^5, mean(rnorm(n, 6.75, sigma)))
+sum(mean.diam <= 6.7-0.036 | mean.diam >= 6.7+0.036)/length(mean.diam)
+
+#c
+mean.diam <- replicate(10^5, mean(rnorm(n, 6.8, sigma)))
+sum(mean.diam <= 6.7-0.036 | mean.diam >= 6.7+0.036)/length(mean.diam)
