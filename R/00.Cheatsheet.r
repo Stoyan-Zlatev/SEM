@@ -56,6 +56,12 @@
 # P(X = k) = dhyper(k, M, N, K)
 # P(X <= k) = phyper(k, M, N, K)
 
+X = # of events.
+λ = average rate of events per interval.
+# X ~ Pois(k, λ)
+# P(X = k) = dpois(k, λ)
+# P(X <= k) = ppois(k, λ)
+
 ## Distribution functions
 
 # X - непрекъсната случайна величина
