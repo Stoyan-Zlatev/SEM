@@ -51,10 +51,10 @@
 # n = total number of elements in the population.
 # N = number of chosen elements in the population.
 # M = number of marked elements in the population.
-# k = number of the marked elements drawn without replacement.
-# X ~ HypGe(k, n, M, N)
-# P(X = k) = dhyper(k, n, M, N)
-# P(X <= k) = phyper(k, n, M, N)
+# K = number of the marked elements drawn without replacement.
+# X ~ HypGe(k, M, N, K)
+# P(X = k) = dhyper(k, M, N, K)
+# P(X <= k) = phyper(k, M, N, K)
 
 ## Distribution functions
 
