@@ -47,7 +47,14 @@
 # P(X = k) = dnbinom(k-r,r,p)
 # P(X <= k) = pnbinom(k-r,r,p)
 
-
+# X = # of marked elements in the sample.
+# n = total number of elements in the population.
+# N = number of chosen elements in the population.
+# M = number of marked elements in the population.
+# k = number of the marked elements drawn without replacement.
+# X ~ HypGe(k, n, M, N)
+# P(X = k) = dhyper(k, n, M, N)
+# P(X <= k) = phyper(k, n, M, N)
 
 ## Distribution functions
 
