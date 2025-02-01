@@ -180,7 +180,7 @@ sim.money <- function(){
 prob.money <- function(n){
     res <- replicate(n, sim.money())
     a <- sum(res == 11 | res == 21) / length(res)
-    b <- sum(res == 21) / length(res == 11 | res == 21)
+    b <- sum(res == 21) / sum(res == 11 | res == 21)
     c(a,b)
 }
 
@@ -244,7 +244,7 @@ sim.floor <- function() {
   floors <- c(2:16)
   me <- sample(floors, 1)
   others <- sample(floors, 6, replace=TRUE)
-  c(sum(duplicated(c(me, others))==TRUE) >= 1, length(which(others == me))>=2)
+  c(sum(duplicated(c(me, others))==TRUE) >= 1, length(which(others == me))>=1)
 }
 
 prob.floor <- function(n) {
